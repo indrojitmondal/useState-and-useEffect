@@ -1,4 +1,6 @@
+
 import { useEffect, useState } from "react"
+import User from "./user";
 
 export default function Users(){
     const [users, setUsers]=useState([]);
@@ -8,22 +10,13 @@ export default function Users(){
         .then( res => res.json())
         .then (data => setUsers(data))
     },[])
-    const userStyle={
-        border: '2px solid purple',
-        margin: '15px',
-        padding: '15px',
-        borderRadius: '15px'
-      }
+   
     return(
       <>
 
         {
-            // way-1
-            //  users.map(user => <User name={user.name} email={user.email}></User>)
-            // Way-2
-            users.map(user => {
-               return <User name={user.name} email={user.email}></User>
-              })
+            
+            users.map(x => <User post={x}></User>)
           
         }
 
@@ -36,13 +29,6 @@ export default function Users(){
        
         
     )
-    function User({name,email}){
-        return(
-            <div style={userStyle}>
-                <h3>Name: {name}</h3>
-                <p>Email:{email}</p>
-            </div>
-          
-        )
-    }
+   
+ 
 }
