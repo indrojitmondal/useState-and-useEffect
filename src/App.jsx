@@ -5,6 +5,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Counter from './Counter'
 import Users from './Users'
+import Contact from '../components/Contact'
 function App() {
  return (
     <>
@@ -29,6 +30,8 @@ function App() {
       {/* <h3>User: {test.length}</h3> */}
       <h2>Use State and Use Effect</h2>
       <Users></Users>
+      <h2>Contact from Folder</h2>
+      <Contact></Contact>
       
 
 
